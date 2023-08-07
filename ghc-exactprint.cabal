@@ -17,6 +17,7 @@ category:            Development
 build-type:          Simple
 tested-with:         GHC == 9.6.1,
                      GHC == 9.6.2
+                     GHC == 9.8.1
 extra-source-files:  ChangeLog
                      tests/examples/failing/*.hs
                      tests/examples/ghc710-only/*.hs
@@ -147,6 +148,7 @@ executable roundtrip
                , base
                , containers
                , directory
+               , extra
                , filemanip
                , filepath
                , ghc
@@ -168,6 +170,7 @@ executable static
   if flag (roundtrip)
     build-depends: base
                  , directory
+                 , extra
                  , filemanip
                  , filepath
                  , ghc
@@ -186,6 +189,7 @@ executable prepare-hackage
     build-depends: base
                  , containers
                  , directory
+                 , extra
                  , filemanip
                  , filepath
                  , ghc       >= 9.4.1
